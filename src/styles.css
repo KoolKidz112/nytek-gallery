@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  background: lightblue;
+}
+
+div {
+  border-radius: 6px;
+  background: lightseagreen;
+  padding: 15px;
+}
+
+#main {
+  display: grid !important;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+  /* Need to learn how to do this again */
+}
+
+.entry {
+  background-image: url("https://cdn.discordapp.com/attachments/907359457695113227/920512728953651200/unknown.png");
+  position: relative;
+  margin: 20px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.entry:hover {
+  transition: 0.5s;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.entry b,
+.entry span {
+  color: white;
+}
