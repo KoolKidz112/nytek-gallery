@@ -64,9 +64,15 @@ const randomText = [
 const randomElement = document.getElementById("random");
 
 generateRandomText();
-newEntry("I'm ready to play.", "I'm ready to pleady to play.");
-newEntry("NFT thing", "aka Fraud Simulator");
-newEntry("Overlap", "AAAHHH overlap");
-newEntry("Imag", "I lov imag", "https://qquq7.csb.app/src/Bikongye.png", "red");
-newEntry("Funky Color", "Aaahh", undefined, "blue");
+newEntry(
+  "NFT Generator",
+  "Also known as Fraud Machine",
+  "./img/nftgenerator.png"
+);
+newEntry(
+  "Fake AI",
+  "Attempt at making an artifical AI",
+  "./img/ai.png",
+  "black"
+);
 entries.forEach((element) => element.render());
