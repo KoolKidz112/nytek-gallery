@@ -21,9 +21,9 @@ class NFT {
   }
 
   render() {
-    document.getElementById("name").innerHTML = nftname;
-    document.getElementById("hash").innerHTML = hash;
-    document.getElementById("price").innerHTML = price;
+    document.getElementById("name").innerHTML = this.name;
+    document.getElementById("hash").innerHTML = this.hash;
+    document.getElementById("price").innerHTML = this.price;
   }
 }
 

@@ -29,6 +29,5 @@ export default class Entry {
     this.el.childNodes[3].textContent = this.description;
     this.el.style.backgroundImage = `url("${this.img}")`;
     main.appendChild(this.el);
-    console.log(this.el.childNodes);
   }
 }
