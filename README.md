@@ -1,2 +1,2 @@
 # nytek-gallery
-Created with CodeSandbox
+chrome experiments made by nerds who use firefox
