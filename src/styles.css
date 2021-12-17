@@ -9,6 +9,18 @@ div {
   padding: 15px;
 }
 
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
 #main {
   display: grid !important;
   grid-template-rows: 50% 50%;
@@ -22,6 +34,7 @@ div {
   margin: 20px;
   padding: 10px;
   transition: 0.3s;
+  z-index: 0;
 }
 
 .entry:hover {
@@ -33,4 +46,45 @@ div {
 .entry b,
 .entry span {
   color: white;
+}
+
+#blur {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#play {
+  width: 800px;
+  height: 600px;
+}
+
+#app {
+  width: 400px;
+  height: 300px;
+}
+
+#close {
+  position: absolute;
+  top: 5%;
+  font-size: 25px;
+  text-align: right;
+  left: 95%;
+  right: 10%;
+  font-weight: lighter;
+}
+
+#close:hover {
+  font-weight: bold;
+  cursor: pointer;
 }

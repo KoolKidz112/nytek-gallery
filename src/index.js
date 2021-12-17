@@ -6,12 +6,16 @@ class Entry {
     name,
     description,
     img = "https://cdn.discordapp.com/attachments/907359457695113227/920512728953651200/unknown.png",
-    col
+    col,
+    w,
+    h
   ) {
     this.img = img;
     this.name = name;
     this.description = description;
     this.col = col;
+    this.w = w;
+    this.h = h;
   }
 
   render() {
@@ -32,7 +36,6 @@ class Entry {
     this.el.childNodes[3].textContent = this.description;
     this.el.style.backgroundImage = `url("${this.img}")`;
     main.appendChild(this.el);
-    console.log(this.el.childNodes);
   }
 }
 const entries = [];
@@ -42,7 +45,17 @@ const entries = [];
 const generateRandomText = () =>
   (randomElement.textContent = randomText[randNumber(0, randomText.length)]);
 const randNumber = (min, max) => Math.floor(Math.random() * max) + min;
-const newEntry = (t, d, i, o = "white") => entries.push(new Entry(t, d, i, o));
+const newEntry = (t, d, i, o = "white", w = 400, h = 300) =>
+  entries.push(new Entry(t, d, i, o, w.toString, h.toString));
+const hide = (el, en) => {
+  const frame = document.getElementById("app");
+  el.classList.toggle("hidden");
+  if (en) {
+    // This doesn't work, fix it
+    frame.style.width = en.w;
+    frame.style.height = en.h;
+  }
+};
 
 // Variables
 const randomText = [
@@ -73,6 +86,16 @@ newEntry(
   "Fake AI",
   "Attempt at making an artifical AI",
   "./img/ai.png",
-  "black"
+  "black",
+  700,
+  500
 );
-entries.forEach((element) => element.render());
+entries.forEach((item) => {
+  item.render();
+});
+// Could use optimization
+document.querySelectorAll(".entry").forEach((element, key) => {
+  element.addEventListener("click", () =>
+    hide(document.getElementById("blur"), entries[key])
+  );
+});
